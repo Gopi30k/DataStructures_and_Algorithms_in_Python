@@ -17,3 +17,4 @@ if __name__ == "__main__":
     print(reverseStringRecusrsively('aw'))
     print(reverseString('awesome'))
     print(reverseString('aw'))
+    print(reverseString(''))
