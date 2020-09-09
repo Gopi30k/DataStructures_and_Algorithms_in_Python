@@ -34,5 +34,4 @@ if __name__ == '__main__':
     print(binary_search_iterative(test_arr_2, 155))
 
     print(binary_search_recursive(test_arr_1, 0, len(test_arr_1),67))
-    # breakpoint()
     print(binary_search_recursive(test_arr_2, 0, len(test_arr_2),0))
