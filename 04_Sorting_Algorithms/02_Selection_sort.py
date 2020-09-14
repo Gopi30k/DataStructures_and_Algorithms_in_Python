@@ -12,3 +12,8 @@ def selection_sort(arr: list):  # O(n2)
 
 if __name__ == '__main__':
     selection_sort([0, 2, 34, 22, 10, 19, 17])
+
+
+# Time Complexity                      | Space Complexity
+# Best-Case  Average-Case  Worst-Case  |
+#   O(n2)        O(n2)         O(n2)    |     O(1)

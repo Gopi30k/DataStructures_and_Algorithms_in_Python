@@ -38,7 +38,12 @@ def bubble_sort_optimized(arr: list):
 
 if __name__ == '__main__':
     # bubble_sort_naive([5, 3, 4, 1, 2])
-    # bubble_sort([5, 3, 4, 1, 2])
-    bubble_sort([8, 1, 2, 3, 4, 5, 6])
-    print('### optimized on nearly Sorted array ###')
-    bubble_sort_optimized([8, 1, 2, 3, 4, 5, 6])
+    bubble_sort([5, 3, 4, 1, 2])
+    # bubble_sort([8, 1, 2, 3, 4, 5, 6])
+    # print('### optimized on nearly Sorted array ###')
+    # bubble_sort_optimized([8, 1, 2, 3, 4, 5, 6])
+
+# Time Complexity                      | Space Complexity
+# Best-Case  Average-Case  Worst-Case  |
+#   O(n)        O(n2)         O(n2)    |     O(1)
+
