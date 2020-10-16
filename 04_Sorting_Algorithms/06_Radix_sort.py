@@ -23,23 +23,19 @@ def getMaxDigitArr(numArr: list):
 def radixSort(numArr: list):
     maxDigitnArr = getMaxDigitArr(numArr)
     for k in range(0, maxDigitnArr):
-        digitBuckets = [0] * (10)
-        print(digitBuckets)
+        digitBuckets = [[] for _ in range(10)]
         for i in range(0, len(numArr)):
-            # print(numArr[i])
             digitPos = getDigitAtPos(numArr[i], k)
-            # print(digitPos)
-            # print(numArr[i])
-            # print(digitBuckets[digitPos])
-            digitBuckets.insert(digitPos, numArr[i])
-        print(digitBuckets)
-        # print(reversed(digitBuckets))
-        # numArr = [].extend(digitBuckets)
-        # print('--------')
-        # print(numArr)
+            digitBuckets[digitPos].append(numArr[i])
+        numArr = [num for nestedNumArr in digitBuckets for num in nestedNumArr]
+    return numArr
 
 
 if __name__ == '__main__':
     # print(getDigitAtPos(2345, 3))
     # print(getDigitCount(2345))
     print(radixSort([23, 345, 5467, 12, 2345, 9852]))
+
+# Time Complexity                                       |   Space Complexity
+#   Best-Case      |  Average-Case    |  Worst-Case    |
+#   O(n log n)    |     O(n log n)   |  O(n2)         |        O(n log n)
