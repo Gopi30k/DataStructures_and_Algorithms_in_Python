@@ -7,6 +7,7 @@ def uniqueArrayCounter(arr: list):  # O(n)
         if arr[i] != arr[j]:
             i = i+1
             arr[i] = arr[j]
+    # print(arr[0:i+1]) # unique array 
     return i + 1
 
 
