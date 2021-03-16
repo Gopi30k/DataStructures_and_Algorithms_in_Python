@@ -1,15 +1,20 @@
+from functools import reduce
 # Sliding Window Problem
+
+
 def naiveSolution(arr: list, w_num: int):  # O(n**2)
+    startIndex = 0
     if w_num > len(arr):
         return 0
-    max = float('-inf') # Greatest negative number
+    max = float('-inf')  # Greatest negative number
     for i in range(0, len(arr)-w_num+1):
         temp = 0
         for j in range(0, w_num):
             temp = temp + arr[i+j]
         if temp > max:
             max = temp
-    return max
+            startIndex = i
+    return max, arr[startIndex:startIndex+w_num]
 
 
 def maxSumSubArray(arr: list, w_num: int):  # O(n)
@@ -17,8 +22,9 @@ def maxSumSubArray(arr: list, w_num: int):  # O(n)
         return 0
     tempSum = 0
     maxSum = 0
-    for i in range(0, w_num):
-        maxSum = maxSum + arr[i]
+    # for i in range(0, w_num):
+    #     maxSum = maxSum + arr[i]
+    maxSum = reduce(lambda a, b: a+b, arr[0:w_num])
 
     tempSum = maxSum
     for i in range(w_num, len(arr)):
